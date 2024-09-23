@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS practice</title>
+</head>
+<body>
+    <h1>THE TITLE OF YOUR WEBPAGE</h1>
+    <div id="container"></div>
+    <!-- the HTML file -->
+<button id="btn">Click Me Too</button>
+<div id="container">
+    <button id="one">Click Me</button>
+    <button id="two">Click Me</button>
+    <button id="three">Click Me</button>
+  </div>
+  
+</body>
+<script>
+    const container = document.querySelector("#container")
+    const para=document.createElement("p");
+    para.classList.add("para")
+    para.textContent="Hey I'm Red"
+    para.setAttribute("style","color:red ; text:50px")
+    const head=document.createElement("h3")
+    head.textContent="i'm a blue h3"
+    head.classList.add("h3_header")
+    head.setAttribute("style","color:blue")
+    const newDiv=document.createElement("div")
+    newDiv.classList.add("newDiv")
+    const h1=document.createElement("h1")
+    h1.textContent="I'm in a Div"
+
+    // the JavaScript file
+const btn = document.querySelector("#btn");
+btn.addEventListener("click", () => {
+  alert("Hello World");
+});
+btn.addEventListener("click", () => {
+    document.body.style.backgroundColor = "blue";  // 
+});
+btn.addEventListener("click", function (e) {
+  console.log(e.target);
+});
+btn.addEventListener("click", function (e) {
+  e.target.style.background = "blue";
+});
+
+    container.appendChild(head)
+    container.appendChild(para)
+    newDiv.appendChild(h1)
+    container.appendChild(newDiv)
+// buttons is a node list. It looks and acts much like an array.
+const buttons = document.querySelectorAll("button");
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+  // and for each one we add a 'click' listener
+  button.addEventListener("click", () => {
+    alert(button.id);
+  });
+});
+
+</script>
+
+
+</html>
