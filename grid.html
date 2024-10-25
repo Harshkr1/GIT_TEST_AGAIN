@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid trying here </title>
+</head>
+<body>
+    <div class="container">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+      </div>
+</body>
+<style>
+    .container{
+        /*this is shorthand for declaring rows and  coulmns in which rows are defined before the slash and coulmns are defined
+        after the slash here */
+        /* grid-template:  50px 50px 50px; */
+        /* grid-template-rows:50px 50px;
+        grid-template-columns: 50px 50px 50px 50px; */
+        /* grid-template-columns: 50px 50px;
+        grid-template-rows: 50px 50px;    
+        iin shorthand of grid-template first rows are defined and then coulmnns are defined here */
+        display: grid;
+  grid-template-columns: 50px 50px;
+  grid-template-rows: 50px 50px;
+  grid-auto-rows: 50px;
+  grid-auto-columns: 50px;
+  /* this property sets the value in case extra elements gets added then where it will ghet added by edefault it gets added in 
+  new rows and not coulmns so  by using this we can make sure that it  can get added to colmn if we want it to */
+  grid-auto-flow: column;
+  /*testing gaps now here */
+  column-gap: 10px;
+  row-gap: 100px;
+
+    }
+    .container > div {
+  border: 1px solid blue;
+}
+
+</style>
+</html>
